@@ -6,6 +6,16 @@
 \usepackage{polski}
 \usepackage[utf8]{inputenc}
 
+\newenvironment<>{varblock}[2][.9\textwidth]{%
+  \setlength{\textwidth}{#1}
+  \begin{actionenv}#3%
+    \def\insertblocktitle{#2}%
+    \par%
+    \usebeamertemplate{block begin}}
+  {\par%
+    \usebeamertemplate{block end}%
+  \end{actionenv}}
+
 \title{Android Studio}
 \definecolor{green}{rgb}{.125,.5,.25}
 \usecolortheme[named=green]{structure}
@@ -66,7 +76,7 @@
           \end{center}
     \end{frame}
 
-    \begin{frame}[t]{Android SDK} 
+    \begin{frame}[t]{Android Software Development Kit} 
         \begin{block}{Czym jest SDK?}
             Zestaw narzędzi dla programistów przeznaczony do tworzenia aplikacji na platformę Android. 
             Składa się z dwóch części: 
@@ -80,9 +90,9 @@
 
     \end{frame}
 
-    \begin{frame}[t]{Android NDK} 
+    \begin{frame}[t]{Android Native Development Kit} 
         \begin{block}{Czym jest NDK?}
-            Android NDK to zestaw narzędzi, który umożliwia implementowanie części aplikacji 
+        Zestaw narzędzi, który umożliwia implementowanie części aplikacji 
             w kodzie natywnym przy użyciu języków takich jak C i C ++ 
   \end{block}
         \begin{center}\vspace{0pt}
@@ -91,26 +101,50 @@
 
     \end{frame}
 
-    \begin{frame}[t]{Android ADB} 
+    \begin{frame}[t]{Android Debug Bridge} 
         \begin{block}{Czym jest ADB?}
-            Android ADB wszechstronne narzędzie wiersza poleceń, 
+            Wszechstronne narzędzie wiersza poleceń, 
             które umożliwia komunikację z urządzeniem. 
             Polecenie adb ułatwia różne działania na urządzeniu, 
             takie jak instalowanie i debugowanie aplikacji, a także zapewnia dostęp do powłoki systemu Unix, 
             której można używać do uruchamiania różnych poleceń na urządzeniu.  
   \end{block}
         \begin{center}\vspace{0pt}
-            \includegraphics[scale=0.3]{Android-NDK}
+            \includegraphics[scale=0.5]{adbLogo}
+          \end{center}
+    \end{frame}
+
+    \begin{frame}[t]{Android Virtual Device} 
+        \begin{block}{Czym jest AVD?}
+            Urządzenie wirtualne z systemem Android to konfiguracja, 
+            która definiuje cechy telefonu, tabletu, Wear OS, Android TV lub Automotive OS 
+            urządzenia z systemem Android, które chcesz zasymulować w emulatorze Androida
+  \end{block}
+        \begin{center}\vspace{0pt}
+            \includegraphics[scale=0.3]{avdd}
           \end{center}
 
+        \begin{block}{Ciekawostka}\vspace{-2pt}
+            Emulator wykorzystywany przez AVD to qemu 
+  \end{block}
     \end{frame}
-    
+
+    \begin{frame}[t]{Layout Editor} 
+        \begin{block}{Czym jest Layout Editor?}
+        Narzędzie ułatwiające pracę z XML. Domyślnie umożliwia pisanie / tworzenie layuty dynamicznie na wiele platform naraz 
+        (Tablety, telefony itd)
+\newline Layout możemy tworzyć w sposób graficzny, tzn przeciągać różne elementy na fragment lub w pełni pisać wszystko ręcznie w XML
+  \end{block}
+        \begin{center} 
+            \includegraphics[scale=0.1]{layoutEditor.png}
+          \end{center}
+    \end{frame}
+
+
+
 
     \begin{frame}[t] \vspace{0pt}
-        \begin{block}{def}
-            dsadsa
-        dsadas
-        \end{block}
+
     \end{frame}
 
 \end{document}
